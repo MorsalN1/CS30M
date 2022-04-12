@@ -1,58 +1,49 @@
-package Files;/*
+package Files;
+/*
 Program: MyFilespt1      Date: April 11, 2022
 
-Purpose: 
+Purpose: Create a MyFile application that prompts the user for the name of a file and then displays a message that
+indicates whether the files exists or not. Note that if the user types in a full path, any single backslashes (\)
+will need to be replaced with an escape sequence(\\) in order to create a new File object.
+
+
 
 
 Author: Morsal Nory
 School: CHHS
 Course: Computer Science 30
 */
-import java.util.Scanner;
-import java.io.*;
-import java.text.NumberFormat;
-
+import java.io.File;
 public class MyFilespt1 {
 	public static void main(String[] args) {
-		File textFile;
-		String fileName;
-		Scanner input = new Scanner(System.in);
-		FileReader in;
-		BufferedReader readFile;
-		String masterAnswers, stuAnswers, stuName;
-		int numCorrect;
-		double percentCorrect;
-		NumberFormat percent = NumberFormat.getPercentInstance();
+	
+		
+		File textFile= new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Files\\TestAnswer");
+		System.out.println(textFile.getName());
+		if(textFile.exists()) {
+			System.out.println("file already exists");
+		} else {
+			System.out.println("file does not exists");}
+		
 
-		/* obtain filename from user */
-		System.out.print("Enter the name of the test file: ");
-		fileName = input.nextLine();
+			File textFile2= new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Files\\notreal");
+			System.out.println(textFile2.getName());
+			if(textFile2.exists()) {
+				System.out.println("file already exists");
+			} else {
+				System.out.println("file does not exists");
 
-		/* read file, display student name, and statistics */
-		textFile = new File(fileName);
-		try {
-			in = new FileReader(textFile);
-			readFile = new BufferedReader(in);
-			masterAnswers = (String)readFile.readLine();
-    		while ((stuName = readFile.readLine()) != null) {
-    			stuAnswers = readFile.readLine();
-    			numCorrect = 0;
-    			for (int grade = 0; grade < masterAnswers.length(); grade++) {
-    				if (stuAnswers.charAt(grade) == masterAnswers.charAt(grade)) {
-    					numCorrect += 1;
-    				}
-    			}
-    			percentCorrect = (double)numCorrect/masterAnswers.length();
-    			System.out.println(stuName + "\t" + percent.format(percentCorrect));
 			}
-			readFile.close();
-    		in.close();
-    	} catch (FileNotFoundException e) {
-			System.out.println("File does not exist or could not be found.");
-			System.err.println("FileNotFoundException: " + e.getMessage());
-		} catch (IOException e) {
-			System.out.println("Problem reading file.");
-    		System.err.println("IOException: " + e.getMessage());
-    	}
+		}
+	
 	}
-}
+/* Screen Dump
+
+TestAnswer
+file already exists
+notreal
+file does not exists
+
+
+*/
+
