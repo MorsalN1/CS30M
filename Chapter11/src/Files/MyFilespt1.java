@@ -1,4 +1,5 @@
 package Files;
+
 /*
 Program: MyFilespt1      Date: April 11, 2022
 
@@ -14,36 +15,33 @@ School: CHHS
 Course: Computer Science 30
 */
 import java.io.File;
+
 public class MyFilespt1 {
 	public static void main(String[] args) {
-	
-		
-		File textFile= new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Files\\TestAnswer");
+
+		File textFile = new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Files\\TestAnswer");
 		System.out.println(textFile.getName());
-		if(textFile.exists()) {
+		if (textFile.exists()) {
 			System.out.println("file already exists");
 		} else {
-			System.out.println("file does not exists");}
-		
-
-			File textFile2= new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Files\\notreal");
-			System.out.println(textFile2.getName());
-			if(textFile2.exists()) {
-				System.out.println("file already exists");
-			} else {
-				System.out.println("file does not exists");
-
-			}
+			System.out.println("file does not exists");
 		}
-	
+
+		File textFile2 = new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Files\\notreal");
+		System.out.println(textFile2.getName());
+		if (textFile2.exists()) {
+			System.out.println("file already exists");
+		} else {
+			System.out.println("file does not exists");
+
+		}
 	}
-/* Screen Dump
 
-TestAnswer
-file already exists
-notreal
-file does not exists
-
-
-*/
-
+}
+/*
+ * Screen Dump
+ * 
+ * TestAnswer file already exists notreal file does not exists
+ * 
+ * 
+ */
