@@ -20,25 +20,48 @@ Course: Computer Science 30
 public class Statspt1 {
 	public static void main(String[] args) {
 
-	File dataFile = new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Stats\\test1.dat");
-	FileReader in;
-	BufferedReader readFile;
-	String score;
-	double avgscore;
-	double totalscores = 0;
-	int NumScores = 0;
-	
-	/*
-	try {
-		 in = new FileReader(dataFile);
+		File textFile = new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Stats\\test1.dat");
+		FileReader in;
+		BufferedReader readFile;
+		String lineOfText;
+		int score;
+		double avg;
+		double totalscore = 0;
+		int numscore = 0, low, high;
+
+	}
+}
+		/*
+		try {
+			in = new FileReader(textFile);
+			readFile = new BufferedReader(in);
+			while ((lineOfText = readFile.readLine()) != null) {
+				System.out.println(lineOfText);
+			}
+			readFile.close();
+			in.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("File does not exist or could not be found.");
+			System.err.println("FileNotFoundException: " + e.getMessage());
+		} catch (IOException e) {
+			System.out.println("Problem reading file.");
+			System.err.println("IOException: " + e.getMessage());
+		}
+*/
+		
+		
+/*
+		 try {
+			// score = new int(String.valueOf(score));
+		 in = new FileReader(textFile);
 		 readFile = new BufferedReader(in);
 		 while ((score = readFile.readLine()) != null ) {
-			 NumScores += 1;
-			 System.out.println(score);
-			 totalscores += Double.parseDouble(score);}
-	
-		 avgscore = totalscores / NumScores;
-		 System.out.println("Average = " + avgscore);
+		 numscore += 1;
+		 System.out.println(score);
+		 totalscore += Double.parseDouble(String.valueOf(score));
+		 }
+		 avg = totalscore / numscore;
+		 System.out.println("Average = " + avg);
 		 readFile.close();
 		 in.close();
 		 } catch (FileNotFoundException e) {
@@ -48,11 +71,8 @@ public class Statspt1 {
 		 } catch (IOException e) {
 		 System.out.println("Problem reading file.");
 		 System.err.println("IOException: " + e.getMessage());
-	
+		 }
 	}
-	*/
-	
-}
 }
 
 /*
