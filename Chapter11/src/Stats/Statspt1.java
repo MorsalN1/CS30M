@@ -22,6 +22,7 @@ Course: Computer Science 30
 public class Statspt1 {
 
 
+
 	
 	
 	public static void main(String[] args) {
@@ -29,25 +30,25 @@ public class Statspt1 {
 		File textFile = new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Stats\\test1.dat");
 		FileReader in;
 		BufferedReader readFile;
-		String lineOfText;
+		String name;
 		String score;
 		double avg;
 		double totalscore = 0;
-		int numscore = 0, low, high;
+		int numscore = 0;		
 
 		try {
 			in = new FileReader(textFile);
 			readFile = new BufferedReader(in);
-			while ((lineOfText = readFile.readLine()) != null) {
-				System.out.println(lineOfText);
-			 
-				
-				
-				
-				
-				
-				
+			while ((name = readFile.readLine()) != null) {
+				score = readFile.readLine();
+		 	numscore +=1;
+		 	totalscore += Double.parseDouble(score);
+			System.out.println(name);	
+		 	System.out.println(score);
 			}
+			avg = totalscore / numscore;
+			System.out.println("the average is:  " + avg);	
+
 			readFile.close();
 			in.close();
 		} catch (FileNotFoundException e) {
