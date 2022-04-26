@@ -24,7 +24,7 @@ Course: Computer Science 30
 
 public class Statspt1 {
 
-	public static String main(String[] args) {
+	public static void main(String[] args) {
 
 		File textFile = new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Stats\\test1.dat");
 		FileReader in;
@@ -34,8 +34,8 @@ public class Statspt1 {
 		double avg;
 		double totalscore = 0;
 		int numscore = 0;
-		ArrayList nounList = new ArrayList(); 
-
+		int max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
+		
 		try {
 			in = new FileReader(textFile);
 			readFile = new BufferedReader(in);
@@ -44,18 +44,25 @@ public class Statspt1 {
 				numscore += 1;
 				totalscore += Double.parseDouble(score);
 				System.out.println(name);
+				
 				System.out.println(score);
+				int Score = Integer.parseInt(score);
+				if (max < Score) {
+					max = Score;
+				}
+				
+
+				if (min > Score) {
+					min = Score;
+				}
 			}
 			avg = totalscore / numscore;
 			System.out.println("the average is:  " + avg);
-
-			if (Integer.parseInt(score)>Integer.parseInt(score))
-			{
-				System.out.println(score);
-			}
 			
-			nounList.add(score);
-			
+			System.out.println(max);
+			System.out.println(min);
+		
+		
 			in.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("File does not exist or could not be found.");
@@ -64,9 +71,7 @@ public class Statspt1 {
 			System.out.println("Problem reading file.");
 			System.err.println("IOException: " + e.getMessage());
 		}
-		{return((String)nounList.get()));}
-		
-		
+
 	}
 }
 
