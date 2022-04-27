@@ -1,5 +1,14 @@
 package Stats;
+/*
+Program: Statspt2      Date: April 26, 2022
 
+Purpose: 
+
+
+Author: Morsal Nory
+School: CHHS
+Course: Computer Science 30
+*/
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -10,7 +19,7 @@ public class Statspt2 {
 
 	public static void main(String[] args) {
 
-		File dataFile = new File("stuScore.dat");
+		File dataFile = new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Stats\\stuscore.dat");
 		FileWriter out;
 		BufferedWriter writeFile;
 		Scanner input = new Scanner(System.in);

@@ -1,5 +1,14 @@
 package Stats;
+/*
+Program: Statspt1      Date: April 13, 2022
 
+Purpose: 
+
+
+Author: Morsal Nory
+School: CHHS
+Course: Computer Science 30
+*/
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,16 +20,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
-/*
-Program: Statspt1      Date: April 13, 2022
-
-Purpose: 
-
-
-Author: Morsal Nory
-School: CHHS
-Course: Computer Science 30
-*/
 
 public class Statspt1 {
 
