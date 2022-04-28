@@ -1,4 +1,4 @@
-package Roaster;
+package Roster;
 /*
 Program: Stuname      Date: April 27, 2022
 

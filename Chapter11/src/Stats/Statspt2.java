@@ -1,4 +1,5 @@
 package Stats;
+
 /*
 Program: Statspt2      Date: April 26, 2022
 
@@ -27,8 +28,6 @@ public class Statspt2 {
 		String name;
 		double max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
 
-		
-
 		try {
 			out = new FileWriter(dataFile);
 			writeFile = new BufferedWriter(out);
@@ -43,21 +42,24 @@ public class Statspt2 {
 				writeFile.newLine();
 
 				totalscore += score;
-				
+
 				if (max < score) {
 					max = score;
+
 				}
-				
 
 				if (min > score) {
 					min = score;
+
 				}
 			}
-			double avg = totalscore/ 5;
-			System.out.println(avg);
-			
-			System.out.println(max);
-			System.out.println(min);
+			double avg = totalscore / 5;
+
+			writeFile.write(String.valueOf(avg));
+			writeFile.newLine();
+			writeFile.write(String.valueOf(max));
+			writeFile.newLine();
+			writeFile.write(String.valueOf(min));
 
 			writeFile.close();
 			out.close();
@@ -69,3 +71,10 @@ public class Statspt2 {
 
 	}
 }
+
+/*
+ * :Enter Student name: Alex :Enter test scores: 65 :Enter Student name: milly
+ * :Enter test scores: 78 :Enter Student name: tim :Enter test scores: 71 :Enter
+ * Student name: mark :Enter test scores: 96 :Enter Student name: carl :Enter
+ * test scores: 84 Data written to file.
+ */
