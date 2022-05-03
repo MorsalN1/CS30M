@@ -19,19 +19,28 @@ import java.io.File;
 public class MyFilespt1 {
 	public static void main(String[] args) {
 
+		//File name testanswer
 		File textFile = new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Files\\TestAnswer");
+		//outputs the name of the file
 		System.out.println(textFile.getName());
+		//checks if the file exists 
 		if (textFile.exists()) {
+			//outputs if it exists
 			System.out.println("file already exists");
 		} else {
+			//outputs if it doesn't exists
 			System.out.println("file does not exists");
 		}
 
+		//File name notreal
 		File textFile2 = new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Files\\notreal");
+		//outputs the name of the file
 		System.out.println(textFile2.getName());
 		if (textFile2.exists()) {
+			//outputs if it exists
 			System.out.println("file already exists");
 		} else {
+			//outputs if it doesn't exists
 			System.out.println("file does not exists");
 
 		}
@@ -41,7 +50,10 @@ public class MyFilespt1 {
 /*
  * Screen Dump
  * 
- * TestAnswer file already exists notreal file does not exists
+ * TestAnswer 
+ * file already exists 
+ * notreal 
+ * file does not exists
  * 
  * 
  */

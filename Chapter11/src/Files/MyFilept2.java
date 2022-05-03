@@ -21,11 +21,15 @@ public class MyFilept2 {
 		Scanner input = new Scanner(System.in);
 
 		File textFile = new File("C:\\Users\\904354510\\git\\CS30M\\Chapter11\\src\\Files\\zzz.txt"); 
+		//outsputs the name of the file
 		System.out.println(textFile.getName());
+		//checks if the file exists
 		if (textFile.exists()) {
+			//outputs if exists
 			System.out.println("File already exists.");
 		} else {
 			try {
+				//if doesnt exists, creates the file
 				textFile.createNewFile();
 				System.out.println("New file created.");
 			} catch (IOException e) {
@@ -34,12 +38,15 @@ public class MyFilept2 {
 			}
 		}
 		 System.out.println("Delete or keep file:  "); 
+		 //user decides to delet or keep the file
 		 String choice = input.nextLine();
 
 		if (choice.equals("keep")) {
+			//file continues to exists if keep
 			System.out.println("File still exists.");
 		} else {
 			textFile.delete();
+			//file deletes if chosen
 			System.out.println("The file has been deleted");
 		}
 	}

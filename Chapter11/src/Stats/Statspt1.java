@@ -1,8 +1,12 @@
 package Stats;
+
 /*
 Program: Statspt1      Date: April 13, 2022
 
-Purpose: 
+Purpose: Create a Stats application that reads names and scores from a data file named test1.dat, supplied with this
+text. The file contains a student name on one line followed by the student’s test score on the next line. The
+Stats application should read and display each name and score. After all the scores have been displayed, the
+lowest score, highest score, and average score should be displayed.
 
 
 Author: Morsal Nory
@@ -14,12 +18,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.Random;
-
 
 public class Statspt1 {
 
@@ -34,34 +32,39 @@ public class Statspt1 {
 		double totalscore = 0;
 		int numscore = 0;
 		int max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
-		
+
 		try {
+			// reads the contents of the file
 			in = new FileReader(textFile);
 			readFile = new BufferedReader(in);
+			// read the names in the file
 			while ((name = readFile.readLine()) != null) {
+				// reads the grades of the file
 				score = readFile.readLine();
 				numscore += 1;
 				totalscore += Double.parseDouble(score);
+				// outputs the name
 				System.out.println(name);
-				
+				// outputs the grade
 				System.out.println(score);
 				int Score = Integer.parseInt(score);
+				// checks for the max grade from each repeatedly
 				if (max < Score) {
 					max = Score;
 				}
-				
 
+				// checks for the min grade from each repeatedly
 				if (min > Score) {
 					min = Score;
 				}
 			}
+			// calculates the average
 			avg = totalscore / numscore;
+			// outputs the average, maximum and minimum
 			System.out.println("the average is:  " + avg);
-			
-			System.out.println(max);
-			System.out.println(min);
-		
-		
+			System.out.println("the maximum is:" + max);
+			System.out.println("the minimum is:" + min);
+
 			in.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("File does not exist or could not be found.");
@@ -76,7 +79,18 @@ public class Statspt1 {
 
 /*
  * Screen Dump
- * 
+Tyler
+67
+james
+96
+Sam
+78
+Alex
+82
+the average is:  80.75
+the maximum is:96
+the minimum is:67
+
  * 
  * 
  * 
