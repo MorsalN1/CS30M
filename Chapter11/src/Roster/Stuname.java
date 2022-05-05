@@ -28,7 +28,7 @@ public Stuname(String FN, String LN) {
 	
 }
 	
-// a method fo the full name of the student
+// a method for the full name of the student
 public String toString() {
 	String Fullname;
 	Fullname = " First and Last name: " + firstName + "  " + LastName;
