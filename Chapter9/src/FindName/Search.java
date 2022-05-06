@@ -38,8 +38,4 @@ public class Search {
 
 	}
 
-	public static int linear1(String[] nameArray, String findname) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
