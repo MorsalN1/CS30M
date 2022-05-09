@@ -16,6 +16,6 @@ public class CRT {
  		<statements>
  		5. 
  		  a) err stream is used to display error messages
- 	      b) they are dispayed from the getMessage() method 
+ 	      b) they are displayed from the getMessage() method 
 	 */
 }

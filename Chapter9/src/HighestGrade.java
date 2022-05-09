@@ -8,29 +8,34 @@ public class HighestGrade {
 		final int MAX = 5;
 		int[] numArray = new int[MAX];
 		Scanner input = new Scanner(System.in);
-		
-		
-		for(int i = 0; i< numArray.length; i++){
+		int max = Integer.MIN_VALUE;
+
+		for (int i = 0; i < numArray.length; i++) {
 			System.out.println("enter a grade between 0-100:  ");
 			int grade = input.nextInt();
-			numArray[i] = grade; 
-			nums.add(new Integer(i));
-			nums.add(new Integer(i));
+			if (max < grade) {
+				max = grade;
+				System.out.println(max);
+				nums.add(max);
+			}
+			nums.add(new Integer(1));
+
 		}
-		//nums.add(new Integer(5));
-		//nums.add(new Integer(3));
 
 		element = nums.get(0);
 		element2 = nums.get(1);
-		if(element.compareTo(element2)==0) {
+		if (element.compareTo(element2) == 0) {
 			System.out.println("the elements have the same value");
-		} else if ( element.compareTo(element2) < 0) {
+			System.out.println(element2);
+			System.out.println(element);
+		} else if (element.compareTo(element2) < 0) {
 			System.out.println("element1 is less than element2");
-		}else
-		{
-			System.out.println("element is greater than 2");
+			System.out.println(element2);
+			System.out.println(element);
+		} else {
+			System.out.println("the highest grade is: ");
+			System.out.println(element);
 		}
-		
-	
+
 	}
 }
