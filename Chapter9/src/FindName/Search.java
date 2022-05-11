@@ -1,8 +1,12 @@
 package FindName;
 /*
-Program: Squares      Date: May 3, 2022
+Program: Search      Date: May 3, 2022
 
-Purpose: 
+Purpose: Add a static method to the Search class that performs a linear search on a String array. The linear() method
+should overload the existing method, have parameters for accepting a String array and a String variable,
+and return an int indicating the position of the String. Create a FindName application that uses the Search
+class. FindName should prompt the user for names to fill an array and then prompt the user for the name
+to find
 
 
 Author: Morsal Nory
@@ -39,3 +43,8 @@ public class Search {
 	}
 
 }
+
+/* Screen Dump
+ *
+ *
+*/
