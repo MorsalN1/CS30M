@@ -13,13 +13,14 @@ Course: Computer Science 30
 public class Squares {
 	
 	public static void main(String[] args) {
-
-		int[] sq1 = { 0, 1, 4, 9, 16 };
-
+		// the squares of 0-4 is stored in here.
+		int[] sq = { 0, 1, 4, 9, 16 };
+		// outputs a title of which squares
 		System.out.println(" The squares of 0-4:  ");
-
+		// outputs the squares of each number until it hits the fifth integer in the element (4)
 		for (int i = 0; i < 5; i++) {
-			System.out.println(sq1[i]);
+			//the output
+			System.out.println(sq[i]);
 
 		}
 	}

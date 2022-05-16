@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
 /*
 Program: HighestGrade      Date: May 9, 2022
 
@@ -21,22 +22,30 @@ public class HighestGrade {
 		Scanner input = new Scanner(System.in);
 		int max = Integer.MIN_VALUE;
 
+		// user enters 5 grades continuously
 		for (int i = 0; i < numArray.length; i++) {
 			System.out.println("enter a grade between 0-100:  ");
 			int grade = input.nextInt();
+			// checks to find which of the grades entered are the highest
 			if (max < grade) {
+				// sets the max into a grade
 				max = grade;
-				System.out.println(max);
 			}
+			// the max is added
 			nums.add(new Integer(max));
+			// number 1 is added
 			nums.add(new Integer(1));
 		}
-		// System.out.println(max);
+		// element takes in the max
 		element = nums.get(0);
+		// element2 takes in the number 1
 		element2 = nums.get(1);
+		// compares the 2 numbers to see if they are equal
 		if (element.compareTo(element2) == 0) {
 			System.out.println("the elements have the same value");
+			// compares to see if element 1 is greater than element 2
 		} else if (element.compareTo(element2) > 0) {
+			// outputs the message for the highest grade
 			System.out.println("the highest grade is:  " + max);
 		}
 
@@ -45,21 +54,18 @@ public class HighestGrade {
 
 /*
  * Screen Dump
+ * 
 enter a grade between 0-100:  
 83
-83
+enter a grade between 0-100:  
+55
 enter a grade between 0-100:  
 67
 enter a grade between 0-100:  
-72
+94
 enter a grade between 0-100:  
-85
-85
-enter a grade between 0-100:  
-92
-92
-the highest grade is:  92
-
+78
+the highest grade is:  94
  * 
  * 
  * 
