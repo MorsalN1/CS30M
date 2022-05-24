@@ -29,7 +29,7 @@ public class practise1 {
         while(true){
 
             if( redButton.getState()){
-                redLED.setState(true);
+                redLED.setState(false);
             } else {
                 redLED.setState(true);
             }
