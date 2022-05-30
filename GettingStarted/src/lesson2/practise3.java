@@ -20,7 +20,7 @@ public class practise3 {
 	            System.out.println("Button State: " + redButton.getState());
 	            Thread.sleep(150);
 	            
-	           
+	          
 	        }
 	    }
 }

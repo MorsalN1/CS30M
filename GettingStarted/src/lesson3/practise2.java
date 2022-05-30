@@ -3,7 +3,7 @@ package lesson3;
 import com.phidget22.DigitalInput;
 import com.phidget22.DigitalOutput;
 
-public class practise1 {
+public class practise2 {
     public static void main(String[] args) throws Exception{
 
         //Create 
@@ -32,15 +32,15 @@ public class practise1 {
         while(true){
 
             if( redButton.getState()){
-                redLED.setState(false);
+                greenLED.setState(true);
             } else {
-                redLED.setState(true);
+                greenLED.setState(false);
             }
 
             if(greenButton.getState()){
-                greenLED.setState(false);
+                redLED.setState(true);
             } else {
-                greenLED.setState(true);
+                redLED.setState(false);
             }
 
             Thread.sleep(150);
