@@ -1,13 +1,9 @@
-package lesson3;
-
 import com.phidget22.DigitalInput;
 import com.phidget22.DigitalOutput;
 
-public class practise3 {
+public class tugawar {
 	public static void main(String[] args) throws Exception {
-
-		// Create
-		int i = 0;
+		
 		DigitalInput redButton = new DigitalInput();
 		DigitalOutput redLED = new DigitalOutput();
 		DigitalInput greenButton = new DigitalInput();
@@ -29,26 +25,33 @@ public class practise3 {
 		greenButton.open(1000);
 		greenLED.open(1000);
 
-		// Use your Phidgets
 		while (true) {
 
-			if (redButton.getState() == true) {
-				redLED.setState(true);
-				i++;
-				System.out.println(i);
-			} else {
-				redLED.setState(false);
+			for(int i = 1; i<=10; i++) {
+				redButton.getState() == true;
+		            System.out.println(i);
 			}
-
+			
+			/*
+			while(redButton.getState() == true) {
+				while(i<=10) {
+					if( redButton.getState()){
+		               
+					System.out.println(i);
+					i++;
+					}
+				}
+				}
+			*/
+/*
 			if (greenButton.getState() == true) {
-				greenLED.setState(true);
 				i++;
 				System.out.println(i);
-			} else {
-				greenLED.setState(false);
 			}
 
 			Thread.sleep(150);
 		}
-	}
+*/
+}
+}
 }
