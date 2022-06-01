@@ -3,7 +3,11 @@ import com.phidget22.DigitalOutput;
 
 public class tugawar {
 	public static void main(String[] args) throws Exception {
-		
+		int i = 0;
+		int k = 0;
+		int l = 1;
+		int m = 1;
+		int s = 1;
 		DigitalInput redButton = new DigitalInput();
 		DigitalOutput redLED = new DigitalOutput();
 		DigitalInput greenButton = new DigitalInput();
@@ -26,32 +30,55 @@ public class tugawar {
 		greenLED.open(1000);
 
 		while (true) {
-
-			for(int i = 1; i<=10; i++) {
-				redButton.getState() == true;
-		            System.out.println(i);
-			}
-			
-			/*
-			while(redButton.getState() == true) {
-				while(i<=10) {
-					if( redButton.getState()){
-		               
-					System.out.println(i);
+			if (redButton.getState() == true) {
+				if (i <= 9) {
+					System.out.println("R Button State: " + redButton.getState());
 					i++;
-					}
+					Thread.sleep(200);
 				}
-				}
-			*/
-/*
+			}
 			if (greenButton.getState() == true) {
-				i++;
-				System.out.println(i);
+				if (k <= 9) {
+					System.out.println("G Button State: " + greenButton.getState());
+					k++;
+					Thread.sleep(200);
+				}
 			}
 
-			Thread.sleep(150);
+			if (k == 10 || i == 10) {
+				if (l < 2) {
+					greenLED.setState(true);
+					Thread.sleep(50);
+					greenLED.setState(false);
+					Thread.sleep(50);
+					redLED.setState(true);
+					Thread.sleep(50);
+					redLED.setState(false);
+					Thread.sleep(50);
+					l++;
+
+				}
+
+			}
+
+			if (k == 10 && s < 6) {
+				greenLED.setState(true);
+				Thread.sleep(50);
+				greenLED.setState(false);
+				Thread.sleep(50);
+				s++;
+
+			}
+			if (i == 10 && m < 6) {
+				redLED.setState(true);
+				Thread.sleep(50);
+				redLED.setState(false);
+				Thread.sleep(50);
+				m++;
+
+			}
+
 		}
-*/
-}
-}
+
+	}
 }

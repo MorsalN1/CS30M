@@ -15,12 +15,12 @@ public class practise3 {
 	        //Open 
 	        redButton.open(1000);
 
-	        //Use your Phidgets 
-	        while(true){
-	            System.out.println("Button State: " + redButton.getState());
-	            Thread.sleep(150);
-	            
-	          
+	        //Use your Phidgets
+	        while(true) {
+	            if(redButton.getState() == true) {
+	            	System.out.println("Button State: " + redButton.getState());
+		            Thread.sleep(150);
+	            }
+	        }
 	        }
 	    }
-}
