@@ -8,7 +8,7 @@ public class green {
 
         DigitalOutput greenLED = new DigitalOutput();
 
-        greenLED.setHubPort(5);
+        greenLED.setHubPort(4);
         greenLED.setIsHubPortDevice(true);
 
         greenLED.open(1000);
