@@ -17,38 +17,57 @@ public class buildthermostat {
 		redButton.open(1000);
 		redLED.open(1000);
 		
+		DigitalInput greenButton = new DigitalInput();
+		DigitalOutput greenLED = new DigitalOutput();
+		greenButton.setHubPort(5);
+		greenButton.setIsHubPortDevice(true);
+		greenLED.setHubPort(4);
+		greenLED.setIsHubPortDevice(true);
+		greenButton.open(1000);
+		greenLED.open(1000);
+		
 		//Create 
         TemperatureSensor temperatureSensor = new TemperatureSensor();
 
         //Open 
         temperatureSensor.open(1000);
-
+        double m = temperatureSensor.getTemperature();
         //Use your Phidgets 
         while (true) {
-        	
-        	if (redButton.getState() == true) {
-        		double m = temperatureSensor.getTemperature();
-				redLED.setState(true);
+     	if (greenButton.getState() == true) {
+       // 		greenLED.setState(true);
+        		Thread.sleep(1000);
+	     //       greenLED.setState(false);
+	    //        Thread.sleep(1000);
+        		m++;
 				System.out.println("Temperature: " + m + " °C" );
-				m++;
+				} else {
+				greenLED.setState(false);
+			}
+     	
+     	if (redButton.getState() == true) {
+    		//redLED.setState(true);
+    		Thread.sleep(1000);
+         //   redLED.setState(false);
+        //    Thread.sleep(1000);
+    		m--;
+			System.out.println("Temperature: " + m + " °C" );
 			} else {
-				redLED.setState(false);
-			}
-        	/*while (redButton.getState() == true) {
-        		
-				//redLED.setState(true);
-				double x =m+1;
-				System.out.println("Temperature: " + x + " °C" );
-			*/} 
-        	/*else {
-				redLED.setState(false);
-			}
-			*/
-            //System.out.println("Temperature: " + temperatureSensor.getTemperature() + " °C" );
-           // Thread.sleep(150);
+			redLED.setState(false);
+		}
+        	
+     	if(21<m && m<23){
+     		greenLED.setState(true);
+     	}
+     	else {
+     		redLED.setState(true);
+     	}
+        
+		
+		
+		
         }
-		
-		
-		
 	}
+}
+
 
